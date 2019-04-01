@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+<tr>
+    <th>Player 1</th>
+    <th>Player 2</th>
+    <th>Team Score</th>
+</tr>
+{% for count in object %}
+<tr>
+    <td align="center" width="150px">{{ count.team1_player1 }}</td>
+    <td align="center" width="150px">{{ count.team1_player2 }}</td>
+    <td align="center" width="120px">{{ count.team1_score }}</td>
+</tr>
+{% endfor %}
+
+    <a href="{% url 'polls:getdata' %}"><h3>Click to add more Scores.</h3></a> <!--This takes to the class field createview-->
+    <br>
+
+</table>
+</body>
+</html>

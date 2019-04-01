@@ -1,0 +1,12 @@
+{{ form.non_field_errors }}
+<form action="{% url 'polls:getdata' %}" method="post" enctype="multipart/form-data">
+
+    <a href="{% url 'polls:showdata' %}">Show Score Board</a><br><br>
+    {% csrf_token %}
+    {% for field in form %}
+        {{ field.label_tag }} <br> {{ field }} {{ field.errors }}
+    <br><br>
+    {% endfor %}
+
+    <input value="Submit Scores." type="submit">
+</form>
